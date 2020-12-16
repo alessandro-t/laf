@@ -1,7 +1,7 @@
 Learning Aggregation Functions - Code
 ----
 This repository contains the python code for reproducing the experiments 
-described in the paper [Learning Aggregation Functions]
+described in the paper Learning Aggregation Functions
 (https://arxiv.org/abs/2012.08482), by Giovanni Pellegrini,
 Alessandro Tibo, Paolo Frasconi, Andrea Passerini, and Manfred Jaeger. 
 
