@@ -1,8 +1,8 @@
 Learning Aggregation Functions - Code
 ----
 This repository contains the python code for reproducing the experiments 
-described in the paper Learning Aggregation Functions
-(https://arxiv.org/abs/2012.08482), by Giovanni Pellegrini,
+described in the paper Learning Aggregation Functions, appearing in the IJCAI
+2021 proceedings (https://arxiv.org/abs/2012.08482) by Giovanni Pellegrini,
 Alessandro Tibo, Paolo Frasconi, Andrea Passerini, and Manfred Jaeger. 
 
 The current implemention relies on PyTorch. However, a TensorFlow version
@@ -22,6 +22,12 @@ Run the Experiments for MNIST
 	$ cd mnist
 	$ ./run.sh
 	
+
+Supplementary Material
+----
+Please read the supplementary.pdf file if you are interested in learning more
+about the supplementary material of our IJCAI 2021 paper.
+
 Citation
 ----
 	@misc{pellegrini2020learning,
