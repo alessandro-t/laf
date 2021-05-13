@@ -1,14 +1,19 @@
-from tensorflow.keras.layers import *
-
 import tensorflow as tf
 
-class LAFLayerTF(Layer):
+def laf_init(shape, dtype=None):
+    a = tf.random.uniform((8, shape[1]),0,1, dtype=dtype)
+    b = tf.random.normal((4, shape[1]), 1.0, 0.1, dtype=dtype)
+    return tf.concat((a,b),axis=0)
+
+class LAFLayerTF(tf.keras.layers.Layer):
     def __init__(self, units=32, eps=1e-7):
         super(LAFLayerTF, self).__init__()
         self.units = units
         self.eps = eps
         
-    def build(self, input_shape, kernel_initializer='random_uniform'):
+    def build(self, input_shape, kernel_initializer='laf_init'):
+        if kernel_initializer == 'laf_init':
+            kernel_initializer = laf_init
         self.w = self.add_weight(shape=(12, self.units),
                                  initializer=kernel_initializer,
                                  trainable=True)
@@ -48,13 +53,15 @@ class LAFLayerTF(Layer):
         res = num / den
         return res
 
-class LAFLayerFastTF(Layer):
+class LAFLayerFastTF(tf.keras.layers.Layer):
     def __init__(self, units=32, eps=1e-7):
         super(LAFLayerFastTF, self).__init__()
         self.units = units
         self.eps = eps
         
-    def build(self, input_shape, kernel_initializer='random_uniform'):
+    def build(self, input_shape, kernel_initializer='laf_init'):
+        if kernel_initializer == 'laf_init':
+            kernel_initializer = laf_init
         self.w = self.add_weight(shape=(12, self.units),
                                  initializer=kernel_initializer,
                                  trainable=True)
